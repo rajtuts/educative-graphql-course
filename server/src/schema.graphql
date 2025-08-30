@@ -1,0 +1,24 @@
+type Query {
+  appName: String
+
+  allProducts: [Product!]!
+
+  productsByAuthor(authorName: String!): [Product!]!
+
+  productsByCategory(slug: String!): [Product!]!
+}
+
+type Product {
+  name: String!,
+  description: String!,
+  url: String!,
+  numberOfVotes: Int!,
+  publishedAt: String!,
+  author: User!,
+}
+
+type User {
+  id: ID!,
+  userName: String!,
+  fullName: String!,
+}
